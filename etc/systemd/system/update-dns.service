@@ -1,0 +1,12 @@
+[Unit]
+Description=Update DNS A record
+Wants=update-dns.timer
+
+[Service]
+Type=simple
+EnvironmentFile=CURRENT_PATH/.env
+ExecStart=CURRENT_PATH/bin/update.sh
+WorkingDirectory=CURRENT_PATH
+
+[Install]
+WantedBy=multi-user.target
